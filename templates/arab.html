@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arab</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <p class="text"><span
+                    style="font-size: 50px;font-weight: 300;font-family: sans-serif;color: #403F68; margin-right: 20px;">منصة
+                    التأشيرة</span><span style="font-size: 70px; font-weight: 50; color: #D5D7DB;">|</span></p>
+            <img src="{% static 'mofa_logo_h.svg'%}" alt="">
+
+        </div>
+        <ul class="new">
+            <li><a href="{% url 'home' %}"><img src="{% static 'lan.png'%}" alt=""></a></li>
+            <li><a href="#"><Button
+                        style="padding: 10px 40px 10px 40px; border-radius: 20px; border-color: #403F68;">الدخول</Button></a>
+            </li>
+            <li><a href="#" style="padding: 10px; color:#403F68;"><span style="margin-top: 100px;"> اﻟﺪﻋﻢ اﻟﻔﻨﻲ</span></a>
+            </li>
+            <li><a href="#" style="padding: 10px; color:#403F68;"><span>مساعدة</span></a></li>
+        </ul>
+    </nav>
+    <div class="nav-foot">
+        <img src="{% static 'decor.png'%}" alt="" class="nav-fot">
+    </div>
+    <div class="government">
+        <p> <span class="b2">تسجيل الدخول للجهات الحكومية وقطاع الأعمال </span>&emsp;<b class="b1">|</b></p>
+    </div>
+    <div class="text-container">
+        <div class="text1">شركات خارج المملكة</div>
+        <div class="text1">الغرف التجارية ووزارة العمل</div>
+        <div class="text1">القطاع الحكومي وشركات الأعمال</div>
+    </div>
+    <div class="text2">مقدمو الخدمات الطبية خارج المملكة</div>
+    </div>
+    <section>
+        <div class="login-form">
+            <form action=" {% url 'arabic' %} " method="post">
+            {% csrf_token %}
+            <label for="" class="txtt">اسم الدخول</label>
+            <div class="input-container">
+                <input class="input-field" type="text" name="usrname" required>
+                <i class="fa fa-user icon"></i>
+            </div>
+            <label for="" class="txtt">كلمة المرور</label>
+            <div class="input-container">
+                <input class="input-field" type="text"  name="password" required>
+                <i class="fa fa-lock icon"></i>
+            </div>
+            <div class="captcha">
+                <label for="captcha-input" class="lab">كلمة التحقق</label>
+                <div class="preview"></div>
+                <div class="captcha-form">
+                    <button class="captcha-refresh">
+                        <i class="fa fa-refresh"></i>
+                    </button>
+                    <input type="text" id="captcha-form" class="capt">
+
+                </div>
+            </div>
+            <div class="form-input">
+                <button class="back">عودة</button>
+                <button id="login-btn">تسجيل الدخول</button>
+            </div>
+        </form>
+        </div>
+    </section>
+    <div class="nav-foott">
+        <img src="{% static 'foot.png'%}" alt="" class="nav-fott">
+    </div>
+    <div>
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="useful-link">
+                            <h2>مواقع ويب مهمة</h2>
+                            <div class="use-links">
+                                <li><a href="#" style="color: #403f68;">وزارة الشئون الخارجية</a></li>
+                                <li><a href="#" style="color: #403f68;">الخدمة السعودية في الخارج</a></li>
+                                <li><a href="#" style="color: #403f68;">التصديقات</a></li>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="social-links">
+                            <h2>اتصال</h2>
+                            <div class="social-icons">
+                                <li><a href="" style="text-decoration: none; color: #403f68;">دعم فني</a></li>
+                                <li><a href="" style="text-decoration: none; color: #403f68;">يساعد</a></li>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="address">
+                            <h2>خريطة الموقع</h2>
+                            <div class="address-links">
+                                <li><a href="" style="color: #403f68;">خدمات للزوار</a></li>
+                                <li><a href="" style="color: #403f68;">خدمات للمواطنين والمقيمين</a></li>
+                                <li><a href="" style="color: #403f68;">خدمات للشركات والجهات</a></li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#"><img src="{% static 'mofa_logo_p.svg'%}" alt="" class="img-fluid logo-footer"></a>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </footer>
+        <section id="copy-right">
+            <div class="copy-right-sec">
+                <p>جميع الحقوق محفوظة 1426-1444 | 2005-2022. وزارة الشئون الخارجية</p>
+
+
+            </div>
+
+        </section>
+    </div>
+    <script src="{% static 'script.js'%}"></script>
+    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+
+</body>
+
+</html>

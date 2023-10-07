@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:wght@800&amp;display=swap'> -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
+
+</head>
+
+<body>
+    <header class='main-header'>
+        <div class="menu-wrap">
+            <a href='#' target='_blank' class="logo-wrap">
+                <img class="logo" src="{% static 'mofa_logo_h.svg'%}" alt="Logo">
+            </a>
+            <b class="bold">|</b>
+            <p> Visa Platform</p>
+
+
+            <label for='nav-tog' class="drop-trigger">
+                <span class="btn-bar top"></span>
+                <span class='btn-bar middle'></span>
+                <span class='btn-bar bottom'></span>
+            </label>
+            <nav class="main-nav">
+                <label for='nav-tog' class='nav-revert'></label>
+                <a href='#' class="nav-item"><span style="padding: 10px; color:#403F68;"> Help </span></a>
+                <a href='#' class="nav-item"><span style="padding: 10px; color:#403F68;"> Support </span></a>
+                <Button style="padding: 10px 40px 10px 40px; border-radius: 20px; border-color: #403F68;">Login</Button>
+                <a href="{% url 'arab' %}" style="padding: 10px;"><img src="{% static 'lan.png'%}" alt=""></a>
+            </nav>
+        </div>
+    </header>
+    <div class="nav-foot">
+        <img src="{% static 'decor.png'%}" alt="" class="nav-fot">
+    </div>
+    <div class="government">
+        <p><b class="b1">|</b> &emsp;<span class="b2">Government agencies and business sector Login</span></p>
+        <div class="row1">
+            <div class="column1">
+                <p>Governmnet Sector and Enterprise Companies​</p>
+            </div>
+            <div class="column1">
+                <p>Chambers of Commerce and Ministry of Labor​</p>
+            </div>
+            <div class="column1">
+                <p>Companies Outside the Kingdom </p>
+            </div>
+            <div class="column1">
+                <p>Medical Service Providers Outside the Kingdom</p>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="login-form">
+            <form action=" {% url 'english' %} " method="post">
+                {% csrf_token %}
+                <label for="">Username</label>
+                <div class="input-container">
+
+                    <i class="fa fa-user icon"></i>
+                    <input class="input-field" type="text" placeholder="" name="usrnm" required>
+                </div>
+                <label for="">Password</label>
+                <div class="input-container">
+
+                    <i class="fa fa-lock icon"></i>
+                    <input class="input-field" type="text" placeholder="" name="passw" required>
+                </div>
+                <div class="captcha">
+                    <label for="captcha-input">Captcha</label>
+                    <div class="preview"></div>
+                    <div class="captcha-form">
+                        <input type="text" id="captcha-form" placeholder="Enter captcha" class="capt" required>
+                        <button class="captcha-refresh">
+                            <i class="fa fa-refresh"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-input">
+                    <button id="login-btn">Login</button>
+                    <button class="back">Back</button>
+                </div>
+        </div>
+        </form>
+    </section>
+    <div class="nav-foott">
+        <img src="{% static 'foot.png'%}" alt="" class="nav-fott">
+    </div>
+    <div>
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="#"><img src="{% static 'mofa_logo_p.svg'%}" alt="" class="img-fluid logo-footer"></a>
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="useful-link">
+                            <h2>Site Map</h2>
+                            <div class="use-links">
+                                <li><a href="#" style="color: #403f68;">Services for Visitors</a></li>
+                                <li><a href="#" style="color: #403f68;">Services for Citizens and Residents</a></li>
+                                <li><a href="#" style="color: #403f68;">Services for Business and Entities</a></li>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="social-links">
+                            <h2>Contact</h2>
+                            <div class="social-icons">
+                                <li><a href="" style="text-decoration: none; color: #403f68;">Technical Support</a></li>
+                                <li><a href="" style="text-decoration: none; color: #403f68;">Help</a></li>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="address">
+                            <h2>Important web sites</h2>
+                            <div class="address-links">
+                                <li><a href="" style="color: #403f68;">Ministry Of Foreign Affairs</a></li>
+                                <li><a href="" style="color: #403f68;">Saudi service abroad</a></li>
+                                <li><a href="" style="color: #403f68;">Ratifications</a></li>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+        <section id="copy-right">
+            <div class="copy-right-sec">
+                <p>All Rights Reserved 1426-1444 | 2005-2022. Ministry of Foreign Affairs</p>
+
+
+            </div>
+
+        </section>
+    </div>
+    <script src="{% static 'script.js'%}"></script>
+    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+</body>
+
+</html>
