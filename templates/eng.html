@@ -5,55 +5,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>English</title>
     <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:wght@800&amp;display=swap'> -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
-
+    <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+        }
+    
+        .navbar {
+          color: #000000;
+          padding: 15px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+    
+        .logo {
+          display: flex;
+          align-items: center;
+        }
+    
+        .logo img {
+          width: 300px;
+          height: 100px;
+          margin-right: 10px;
+        }
+    
+        .logo-text {
+          width: 100%;
+        margin-left: 20px;
+        font-size: 40px;
+        margin-top: 25px;
+        font-weight: 300;
+        font-family: sans-serif;
+        color: #403F68;
+        }
+    
+        .nav-links {
+          display: flex;
+          align-items: center;
+          margin-top: 80px;
+          margin-right: 50px;
+        }
+    
+        .nav-link {
+          margin-right: 15px;
+          color: #fff;
+          text-decoration: none;
+        }
+    
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+    
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 300px;
+          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+          z-index: 1;
+          text-align: center;
+          right: 0;
+        }
+    
+        .dropdown-content div {
+          display: inline-block;
+          padding: 10px;
+        }
+    
+        .dropdown-content i {
+          font-size: 30px;
+          margin-bottom: 5px;
+        }
+    
+        .dropdown-content p {
+          margin: 0;
+        }
+    
+        .dropdown-content .icon-container {
+          display: flex;
+          justify-content: space-between;
+        }
+    
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        .nav-fot{
+        position: absolute;
+        top: 150px;
+        width: 100%;
+    }
+    .nav-fott{
+        position: absolute;
+        top: 1180px;
+        width: 100%;
+    }
+    .bold{
+            font-size: 70px;
+            font-weight: 50;
+            color: #D5D7DB;
+            margin-left: 50px;
+        }
+      </style>
 </head>
 
 <body>
-    <header class='main-header'>
-        <div class="menu-wrap">
-            <a href='#' target='_blank' class="logo-wrap">
-                <img class="logo" src="{% static 'mofa_logo_h.svg'%}" alt="Logo">
-            </a>
-            <b class="bold">|</b>
-            <p> Visa Platform</p>
-
-
-            <label for='nav-tog' class="drop-trigger">
-                <span class="btn-bar top"></span>
-                <span class='btn-bar middle'></span>
-                <span class='btn-bar bottom'></span>
-            </label>
-            <nav class="main-nav">
-                <label for='nav-tog' class='nav-revert'></label>
-                <a href='#' class="nav-item"><span style="padding: 10px; color:#403F68;"> Help </span></a>
-                <a href='#' class="nav-item"><span style="padding: 10px; color:#403F68;"> Support </span></a>
-                <Button style="padding: 10px 40px 10px 40px; border-radius: 20px; border-color: #403F68;">Login Drop</Button>
-                <a href="{% url 'arab' %}" style="padding: 10px;"><img src="{% static 'lan.png'%}" alt=""></a>
-            </nav>
+    <div class="navbar">
+        <div class="logo">
+          <img src="{% static 'mofa_logo_h.svg' %}" alt="Logo">
+          <b class="bold">|</b>
+          <div class="logo-text"> Visa Platform</div>
         </div>
-    </header>
-    <div class="nav-foot">
-        <img src="{% static 'decor.png'%}" alt="" class="nav-fot">
-    </div>
+    
+        <div class="nav-links">
+          <a href="{% url 'home' %}" class="nav-link" style="padding: 10px; color:#403F68;">Help</a>
+          <a href="{% url 'home' %}" class="nav-link" style="padding: 10px; color:#403F68;">Support</a>
+    
+          <div class="dropdown">
+            <button class="nav-link" style="padding: 10px 40px 10px 40px; border-radius: 20px; border-color: #403F68; color: #403F68;">Login</button>
+            <div class="dropdown-content">
+                <div class="icon-container">
+                  <div style="border: 1px solid #403F68;border-radius: 5px; margin-left: 10px; width: 100%; padding-left: 20px; padding-right: 20px; padding-bottom: 0px;">
+                    <i class="fa fa-briefcase" style="color: #403F68; font-size: 100px;"></i>
+                    <p style="color: #403F68;">Individual Login</p>
+                  </div>
+                  <div style="border: 1px solid #403F68;border-radius: 5px; width: 100%; padding-left: 10px; padding-right: 10px; padding-bottom: 0px;">
+                    <i class="fa fa-building-o" style="color: #403F68; font-size: 100px;"></i>
+                    <p style="color: #403F68; width: 250px;">Government agencies and business sector Login</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <a href="{% url 'arab' %}"><img src="{% static 'lan.png' %}" alt=""></a>
+        </div>
+      </div>
+        <div class="nav-foot">
+            <img src="{% static 'decor.png' %}" alt="" class="nav-fot">
+        </div>
     <div class="government">
         <p><b class="b1">|</b> &emsp;<span class="b2">Government agencies and business sector Login</span></p>
         <div class="row1">
             <div class="column1">
-                <p>Governmnet Sector and Enterprise Companies​</p>
+                <a href="{% url 'home' %}" style="color: #403F68;"><p>Governmnet Sector and Enterprise Companies​</p></a>
             </div>
             <div class="column1">
-                <p>Chambers of Commerce and Ministry of Labor​</p>
+                <a href="{% url 'home' %}" style="color: #403F68;"><p>Chambers of Commerce and Ministry of Labor​</p></a>
             </div>
             <div class="column1">
-                <p>Companies Outside the Kingdom </p>
+                <a href="{% url 'home' %}" style="color: #403F68;"><p>Companies Outside the Kingdom </p></a>
             </div>
             <div class="column1">
-                <p>Medical Service Providers Outside the Kingdom</p>
+                <a href="{% url 'home' %}" style="color: #403F68;"><p>Medical Service Providers Outside the Kingdom</p></a>
             </div>
         </div>
     </div>
@@ -81,10 +190,16 @@
                         <button class="captcha-refresh">
                             <i class="fa fa-refresh"></i>
                         </button>
+                        
                     </div>
+                    <div style="background-color: rgba(0, 255, 0, 0.29);">
+                        <ul>
+                    <li id="demo" style="color: rgb(0, 31, 0); text-decoration: dotted;"></li>
+                </ul>
+                </div>
                 </div>
                 <div class="form-input">
-                    <button id="login-btn">Login</button>
+                    <button id="login-btn" onclick="myFunction()">Login</button>
                     <button class="back">Back</button>
                 </div>
         </div>
@@ -147,8 +262,19 @@
 
         </section>
     </div>
+    <script>
+        function toggleDropdown() {
+          var dropdown = document.getElementById("myDropdown");
+          dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+        }
+      </script>
     <script src="{% static 'script.js'%}"></script>
     <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+    <script>
+        function myFunction() {
+          document.getElementById("demo").innerHTML = "Saved Successful";
+        }
+        </script> 
 </body>
 
 </html>

@@ -9,40 +9,167 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            color: #000000;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            /* Move logo and text to the right */
+        }
+
+        .logo img {
+            width: 300px;
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            width: 100%;
+            margin-right: 20px;
+            font-size: 40px;
+            margin-top: 25px;
+            font-weight: 300;
+            font-family: sans-serif;
+            color: #403F68;
+            text-align: right;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            margin-top: 80px;
+            margin-right: 130px;
+        }
+
+        .nav-link {
+            margin-right: 15px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 300px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            text-align: center;
+        }
+
+        .dropdown-content div {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        .dropdown-content i {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .dropdown-content p {
+            margin: 0;
+        }
+
+        .dropdown-content .icon-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .nav-fot {
+            position: absolute;
+            top: 150px;
+            width: 100%;
+        }
+
+        .nav-fott {
+            position: absolute;
+            top: 980px;
+            width: 100%;
+        }
+
+        .bold {
+            font-size: 70px;
+            font-weight: 50;
+            color: #D5D7DB;
+            margin-right: 50px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <nav>
-        <div class="logo">
-            <p class="text"><span
-                    style="font-size: 50px;font-weight: 300;font-family: sans-serif;color: #403F68; margin-right: 20px;">منصة
-                    التأشيرة</span><span style="font-size: 70px; font-weight: 50; color: #D5D7DB;">|</span></p>
-            <img src="{% static 'mofa_logo_h.svg'%}" alt="">
+    <div class="navbar">
+
+        <div class="nav-links">
+            <a href="{% url 'home' %}"><img src="{% static 'lan.png' %}" alt=""></a>
+            <div class="dropdown">
+                <button class="nav-link"
+                    style="padding: 10px 40px 10px 40px; border-radius: 20px; border-color: #403F68; color: #403F68;">تعليمات</button>
+                <div class="dropdown-content">
+                    <div class="icon-container">
+                        <div
+                            style="border: 1px solid #403F68;border-radius: 5px; margin-left: 10px; width: 100%; padding-left: 20px; padding-right: 20px; padding-bottom: 0px;">
+                            <i class="fa fa-briefcase" style="color: #403F68; font-size: 100px;"></i>
+                            <p style="color: #403F68;">دخول الأفراد  </p>
+                        </div>
+                        <div
+                            style="border: 1px solid #403F68;border-radius: 5px; width: 100%; padding-left: 10px; padding-right: 10px; padding-bottom: 0px;">
+                            <i class="fa fa-building-o" style="color: #403F68; font-size: 100px;"></i>
+                            <p style="color: #403F68; width: 250px;"> دخول الجهات الحكومية وقطاع الأعمال</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="{% url 'arab' %}" class="nav-link" style="padding: 10px; color:#403F68;">دعم</a>
+            <a href="{% url 'arab' %}" class="nav-link" style="padding: 10px; color:#403F68;">تعليمات</a>
+
+
 
         </div>
-        <ul class="new">
-            <li><a href="{% url 'home' %}"><img src="{% static 'lan.png'%}" alt=""></a></li>
-            <li><a href="#"><Button
-                        style="padding: 10px 40px 10px 40px; border-radius: 20px; border-color: #403F68;">الدخول</Button></a>
-            </li>
-            <li><a href="#" style="padding: 10px; color:#403F68;"><span style="margin-top: 100px;"> اﻟﺪﻋﻢ اﻟﻔﻨﻲ</span></a>
-            </li>
-            <li><a href="#" style="padding: 10px; color:#403F68;"><span>مساعدة</span></a></li>
-        </ul>
-    </nav>
+
+        <div class="logo">
+            <div class="logo-text">منصة التأشيرة</div>
+            <b class="bold">|</b>
+            <img src="{% static 'mofa_logo_h.svg' %}" alt="Logo">
+        </div>
+    </div>
+
     <div class="nav-foot">
-        <img src="{% static 'decor.png'%}" alt="" class="nav-fot">
+        <img src="{% static 'decor.png' %}" alt="" class="nav-fot">
     </div>
     <div class="government">
         <p> <span class="b2">تسجيل الدخول للجهات الحكومية وقطاع الأعمال </span>&emsp;<b class="b1">|</b></p>
     </div>
     <div class="text-container">
-        <div class="text1">شركات خارج المملكة</div>
-        <div class="text1">الغرف التجارية ووزارة العمل</div>
-        <div class="text1">القطاع الحكومي وشركات الأعمال</div>
+        <div class="text1"><a href="{% url 'arab' %}" style="color: #403F68;">شركات خارج المملكة</a></div>
+        <div class="text1"><a href="{% url 'arab' %}" style="color: #403F68;">الغرف التجارية ووزارة العمل</a></div>
+        <div class="text1"><a href="{% url 'arab' %}" style="color: #403F68;">القطاع الحكومي وشركات الأعمال</a></div>
     </div>
-    <div class="text2">مقدمو الخدمات الطبية خارج المملكة</div>
+    <div class="text2"><a href="{% url 'arab' %}" style="color: #403F68;">مقدمو الخدمات الطبية خارج المملكة</a></div>
     </div>
     <section>
         <div class="login-form">
@@ -136,6 +263,19 @@
     </div>
     <script src="{% static 'script.js'%}"></script>
     <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+    <script>
+        function toggleDropdown() {
+          var dropdown = document.getElementById("myDropdown");
+          dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+        }
+      </script>
+    <script src="{% static 'script.js'%}"></script>
+    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+    <script>
+        function myFunction() {
+          document.getElementById("demo").innerHTML = "Saved Successful";
+        }
+        </script>
 
 </body>
 
