@@ -12,7 +12,7 @@ def arab(request):
 def save_e(request):
     if request.method=='POST':
         uname=request.POST.get('usrnm')
-        passw=request.POST.get('pass')
+        passw=request.POST.get('passw')
         en=Details(uname=uname,passw=passw)
         en.save()
     return render(request,'eng.html')
